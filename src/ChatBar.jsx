@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 
-// import ChatBar from 'ChatBar.jsx';
-
 export default class ChatBar extends Component {
   constructor(props) {
     super(props);
@@ -15,11 +13,6 @@ export default class ChatBar extends Component {
       content: ''
     }
   }
-
-  // handleMsgType(event) {
-  //   this.setState({
-  //   })
-  // }
 
   handleUserChange(event) {
     this.setState({
@@ -69,4 +62,3 @@ export default class ChatBar extends Component {
     );
   }
 }
-          // defaultValue={this.props.currentUser.name}

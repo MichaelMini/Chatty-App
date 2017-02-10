@@ -23,10 +23,8 @@ const wss = new SocketServer({ server });
 let connectionCounter = 0;
 const connectionCounterStr = JSON.parse(connectionCounter);
 wss.on('connection', (ws) => {
-  // console.log('#'+Math.floor(Math.random()*16777215).toString(16));
   connectionCounter++;
   console.log('Client connected');
-  console.log(connectionCounter);
   let message = {
     type: 'updateCount',
     content: connectionCounter,
@@ -62,7 +60,6 @@ wss.on('connection', (ws) => {
   ws.on('close', () => {
     connectionCounter--;
     console.log('Client disconnected');
-    console.log(connectionCounter, ' users online.');
     let message = {
       type: 'updateCount',
       content: connectionCounter,
